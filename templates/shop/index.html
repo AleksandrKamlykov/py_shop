@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+Products
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron text-center">
+            <h1>Welcome to Our Web Development Studio</h1>
+            <p>We create stunning and efficient websites to help your business grow.</p>
+            <a href="{% url 'shop:contacts' %}" class="btn btn-primary">Contact Us</a>
+        </div>
+        <div class="text-center">
+            <img src="{% static 'shop/home.jpg' %}" alt="Home Image" class="img-fluid">
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h2>Our Services</h2>
+                <p>We offer a wide range of web development services including custom website design, e-commerce solutions, and SEO optimization.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Our Portfolio</h2>
+                <p>Take a look at some of the amazing projects we have completed for our clients. We take pride in delivering high-quality work.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>About Us</h2>
+                <p>Learn more about our team of experienced developers and designers who are passionate about creating the best web solutions for you.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

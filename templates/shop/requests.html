@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+Requests
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron text-center">
+            <h1>Requests</h1>
+            <p>Here are the requests we have received from our clients. Click on a request to view more details.</p>
+        </div>
+        <div class="list-group">
+            {% for request in requests %}
+            <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ request.name }}</h5>
+                    <small>{{ request.created_at }}</small>
+                </div>
+                <p class="mb-1">{{ request.message }}</p>
+                <small>{{ request.email }}</small>
+           </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

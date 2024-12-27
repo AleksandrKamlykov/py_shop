@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}
+Products
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Products</h1>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'shop:product' product_id=product.id %}" >{{ product.name }}</a>
+                        </h5>
+                        <p class="card-text">{{ product.category }}</p>
+                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text">{{ product.price }}$</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
